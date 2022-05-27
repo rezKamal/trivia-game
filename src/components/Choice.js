@@ -21,6 +21,7 @@ export default function Choice(props) {
                 :   "choice"
                         .concat(props.selected ? "--selected" : "--unselected")
             }
+            style={{color: !props.selected && props.revealed ? "gray" : "#293264"}}
             onClick={props.selectChoice}
             disabled={props.revealed || props.selected}
         >{props.text}</button>
