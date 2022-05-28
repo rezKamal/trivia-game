@@ -3,7 +3,7 @@ import React from "react"
 export default function StatsPage(props) {
     const message = 
         `You have taken ${props.score[1]/5} quizzes and gotten
-        ${props.score[0]}/${props.score[1]} in total (${props.score[0]/props.score[1] * 100}%)`
+        ${props.score[0]}/${props.score[1]} in total (${(props.score[0]/props.score[1] * 100).toFixed(0)}%)`
     return (
         <div className="stats-page--container">
             <h1>All-Time Stats 😎</h1>
