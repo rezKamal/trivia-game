@@ -29,7 +29,8 @@ h3, h4 {
   justify-content: center;
 }
 
-.start-page--container > button {
+.start-page--container > button,
+.stats-page--container > button {
   border: none;
   border-radius: 15px;
   color: #F5F7FB;
@@ -38,7 +39,8 @@ h3, h4 {
   height: 52px;
   font-family: "Inter";
   font-size: 16px;
-  margin: 0 auto;
+  margin: 10px auto;
+  align-content: center;
 }
 
 .quiz-page--container > button {
@@ -148,4 +150,21 @@ p {
   line-height: 0;
   margin-bottom: 15px;
   color: #293264;
+}
+
+.stats-page--container > h1 {
+  margin: 10vh 0 5vh 0;
+}
+
+.stats-page--container > div {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h5 {
+  font-size: 15px;
+  font-weight: 400px;
+  font-style: normal;
+  font-family: "Inter";
+  text-align: center;
 }

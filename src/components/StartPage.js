@@ -6,6 +6,7 @@ export default function StartPage(props) {
             <h1>Quizzical</h1>
             <h3>Test your trivia knowledge!</h3>
             <button onClick={props.startQuiz}>Start quiz</button>
+            <button onClick={props.viewStats}>View stats</button>
             <h4 style={{bottom: "5%",
             position: "fixed",
             textAlign: "center",
