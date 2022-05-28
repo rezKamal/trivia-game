@@ -1,4 +1,5 @@
 export const categories = [
+    "Overall",
     "General Knowledge",
     "Books",
     "Film",
@@ -7,5 +8,15 @@ export const categories = [
     "Television",
     "Video Games",
     "Board Games",
-    "Science & Nature"
+    "Science & Nature",
+    "Computers",
+    "Mathematics",
+    "Mythology",
+    "Sports",
+    "Geography",
+    "History",
+    "Politics",
+    "Art",
+    "Celebrities",
+    "Animals"
 ]

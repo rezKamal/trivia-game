@@ -10,7 +10,10 @@ export default function App() {
   const [pageShown, setPageShown] = React.useState("start")
   const [gameInProgress, setGameInProgress] = React.useState(false)
   const [score, setScore] = React.useState(
-    JSON.parse(localStorage.getItem("overall")) || [0, 0])
+    categories.map(category =>
+      JSON.parse((localStorage.getItem("category--".concat(category)))) || [0, 0]
+    )
+  )
   // const [byCategoryScore, setByCategoryScore] = React.useState(
   //   categories.map()
   // )
@@ -21,8 +24,10 @@ export default function App() {
   attempted in the same category
   */
   React.useEffect(() => {
-    localStorage.setItem("overall", JSON.stringify(score))
-    console.log(score)
+    for (let i = 0; i < 20; i++) {
+      localStorage.setItem(
+        "category--".concat(categories[i]), JSON.stringify(score[i]))
+    }
   }, [score])
 
   const decodeHTML = html => {
@@ -112,7 +117,18 @@ export default function App() {
         //   "overall", JSON.stringify(
         //     [overallScore[0] + isCorrect, ++overallScore[1]]))
         setScore(prevScore => {
-          return [prevScore[0] + isCorrect, prevScore[1] + 1]
+          var newScore = []
+          for (let j = 0; j < 20; j++) {
+            if (categories[j] === "Overall") {
+              newScore.push([prevScore[j][0] + isCorrect, prevScore[j][1] + 1])
+            } else if (categories[j] === questions[i].category) {
+              newScore.push([prevScore[j][0] + isCorrect, prevScore[j][1] + 1])
+            } else {
+              newScore.push(prevScore[j])
+            }
+          }
+          console.log(newScore)
+          return newScore
         })
       }
     }
